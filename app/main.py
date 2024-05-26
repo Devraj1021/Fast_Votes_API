@@ -59,7 +59,7 @@ def create_post(new_post : Post, db: Session = Depends(get_db)):
     # cursor.execute("""INSERT INTO posts (title, content, published) VALUES (%s, %s, %s) RETURNING *""", (new_post.title, new_post.content, new_post.published))
     # posts = cursor.fetchone()
     # conn.commit()
-    
+    # created post
     post = models.Post(**new_post.model_dump())
     # post = models.Post(title=new_post.title, content=new_post.content, published=new_post.published)
     db.add(post)
