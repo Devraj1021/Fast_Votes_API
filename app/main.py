@@ -60,11 +60,12 @@ def create_post(new_post : Post, db: Session = Depends(get_db)):
     # posts = cursor.fetchone()
     # conn.commit()
     # created post
-    post = models.Post(**new_post.model_dump())
-    # post = models.Post(title=new_post.title, content=new_post.content, published=new_post.published)
-    db.add(post)
-    db.commit()
-    db.refresh(post)
+    post = 1
+    # post = models.Post(**new_post.model_dump())
+    # # post = models.Post(title=new_post.title, content=new_post.content, published=new_post.published)
+    # db.add(post)
+    # db.commit()
+    # db.refresh(post)
     return {"data": post}
 
 @app.put("/posts/{id}")
